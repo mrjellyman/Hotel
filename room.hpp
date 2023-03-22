@@ -23,7 +23,7 @@ class room{
     
     public:
         //constructos
-        room(int &roomNumber, string &roomType, bool &occupied){
+        room(int roomNumber, string roomType, bool occupied){
             this->roomNumber = roomNumber;
             this->roomType = roomType;
             this->occupied = occupied;
