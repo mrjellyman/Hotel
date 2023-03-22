@@ -11,15 +11,19 @@ int main(){
     const int numOfFloors = 4;
     const int roomsPerFloor = 100;
 
+    vector<vector<room>> floors;//vector of all floors
+
     //store all floors in a vector
     for(int i=0; i<numOfFloors; i++){
-        //store all rooms in a floor vector
+        vector<room> rooms; //all rooms on floor
+
         for(int j=0; j<roomsPerFloor; j++){
-            vector<room> tempFloor;
             int roomNum = i+1;
-            tempFloor.push_back(room(roomNum, "Standard Room", false));
-            
+            //add rooms to floor
+            rooms.push_back(room(roomNum, "Standard Rom", false));
         }
+        //add floors to floor vector.
+        floors.push_back(rooms);
     }
 
     
