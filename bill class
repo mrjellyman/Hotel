@@ -1,0 +1,104 @@
+/*
+BILLING AND PAYMENT MANAGEMENT SYSTEM
+
+#ifndef BILL_H
+#define BILL_H
+
+#include <string>
+#include <map>
+using namespace std;
+
+class Bill
+{
+private:
+	string guestName;
+	string roomType;
+	int roomNumber;
+	double amount;
+		
+public:
+	Bill();
+	Bill(string &guestName, string &roomType, int &roomNumber, double &amount);
+
+  void setGuestName(string &guestName);
+	void setRoomType(string &roomType);
+  void setRoomNumber(int &roomNumber);
+	void setAmount(double &amount);
+       
+  string getGuestName();
+	string getRoomType();
+  int getRoomNumber();
+	double getAmount();
+};
+
+#endif
+
+TO IMPLEMENT
+*/
+
+#include <iostream>
+#include <string>
+#include <map>
+#include "Bill.h"
+using namespace std;
+
+Bill::Bill()
+{
+	guestName = "N/A";
+	roomType = "N/A";
+	roomNumber = 0;
+	amount = 0;
+}
+//roomType needs to include "N/A" within room class
+Bill::Bill(string &guestName, string &roomType, int &roomNumber, double &amount)
+{
+	this-> guestName = guestName;
+	this-> roomType = roomType;
+	this-> roomNumber = roomNumber;
+	this-> amount = amount;
+	}
+
+void Bill::setGuestName(string &guestName)
+{
+    this-> guestName = guestName;
+}
+    
+void Bill::setRoomType(string &roomType)
+{
+    this->roomType = roomType;
+}
+        
+void Bill::setRoomNumber(int &roomNumber)
+{
+    this->roomNumber = roomNumber;
+}
+    
+void Bill::setAmount(double &amount)
+{
+    this-> amount = amount;
+}
+    
+string Bill::getGuestName()
+{
+    return guestName;
+}
+    
+string Bill::getRoomType()
+{
+    return roomType;
+}
+       
+int Bill::getRoomNumber()
+{
+    return roomNumber;
+}  
+    
+double Bill::getAmount()
+{
+    return amount;
+}
+
+int main()
+{
+	return 0;
+}
