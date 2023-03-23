@@ -1,0 +1,92 @@
+/*
+CUSTOMER MANAGEMENT
+
+HEADER FILE
+
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
+
+#include <string>
+#include <map>
+using namespace std;
+
+class Customer
+{
+private:
+	string guestName;
+	string contact;
+	string resHistory;
+	
+public:	
+	Customer();
+	Customer(string &guestName, string &contact, string &resHistory);
+   
+  void setGuestName(string &guestName);
+	void setContact(string &contact); 
+  void setResHistory(int &resHistory);
+	
+	string getGuestName();
+	string getContact();
+  string getResHistory();
+};
+
+#endif
+*/
+
+TO IMPLEMENT
+
+#include <iostream>
+#include <string>
+#include <map>
+#include "Customer.h"
+using namespace std;
+
+//empty 
+Customer::Customer() 
+{
+	guestName = "N/A";
+	contact = "N/A";
+	resHistory = "N/A";
+}
+//reservation history can be composite (list of time, duration, cost, room, etc.)
+Customer::Customer(string &guestName, string &contact, string &resHistory) 
+{
+	this-> guestName = guestName;
+	this-> contact = contact;
+	this-> resHistory = resHistory;
+}
+
+void Customer::setGuestName(string &guestName)
+{
+    this-> guestName = guestName;
+}
+    
+void Customer::setContact(string &contact)
+{
+    this->contact = contact;
+}
+        
+void Customer::setResHistory(int &resHistory)
+{
+    this->resHistory = resHistory;
+}
+   
+string Customer::getGuestName()
+{
+    return guestName;
+}
+    
+string Customer::getContact()
+{
+    return contact;
+}
+       
+string Customer::getResHistory()
+{
+    return resHistory;
+} 
+
+int main()
+{
+	return 0;
+}	
