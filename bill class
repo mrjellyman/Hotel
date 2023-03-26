@@ -21,14 +21,16 @@ public:
 	Bill(string &guestName, string &roomType, int &roomNumber, double &amount);
 
   void setGuestName(string &guestName);
-	void setRoomType(string &roomType);
+  void setRoomType(string &roomType);
   void setRoomNumber(int &roomNumber);
-	void setAmount(double &amount);
+  void setAmount(double &amount);
        
   string getGuestName();
-	string getRoomType();
+  string getRoomType();
   int getRoomNumber();
-	double getAmount();
+  double getAmount();
+  
+  void printBill();
 };
 
 #endif
@@ -44,36 +46,36 @@ using namespace std;
 
 Bill::Bill()
 {
-	guestName = "N/A";
-	roomType = "N/A";
-	roomNumber = 0;
-	amount = 0;
+    guestName = "N/A";
+    roomType = "N/A";
+    roomNumber = 0;
+    amount = 0;
 }
 //roomType needs to include "N/A" within room class
-Bill::Bill(string &guestName, string &roomType, int &roomNumber, double &amount)
+Bill::Bill(string guestName, string roomType, int roomNumber, double amount)
 {
-	this-> guestName = guestName;
-	this-> roomType = roomType;
-	this-> roomNumber = roomNumber;
-	this-> amount = amount;
-	}
+    this-> guestName = guestName;
+    this-> roomType = roomType;
+    this-> roomNumber = roomNumber;
+    this-> amount = amount;
+}
 
-void Bill::setGuestName(string &guestName)
+void Bill::setGuestName(string guestName)
 {
     this-> guestName = guestName;
 }
     
-void Bill::setRoomType(string &roomType)
+void Bill::setRoomType(string roomType)
 {
     this->roomType = roomType;
 }
         
-void Bill::setRoomNumber(int &roomNumber)
+void Bill::setRoomNumber(int roomNumber)
 {
     this->roomNumber = roomNumber;
 }
     
-void Bill::setAmount(double &amount)
+void Bill::setAmount(double amount)
 {
     this-> amount = amount;
 }
@@ -98,7 +100,28 @@ double Bill::getAmount()
     return amount;
 }
 
-int main()
+void Bill::printBill()
 {
-	return 0;
+    cout << "Guest name: " << guestName << endl;
+    cout <<"Room type: " << roomType << endl;
+    cout << "Room number: " << roomNumber << endl;
+    cout << "Amount: $" << amount << endl << endl;
+}
+
+int main()
+{ 
+    //Dummy Code
+    vector<Bill> Bills;
+
+    // Create a Bill object and add it to the vector
+    Bill b1("Alice", "Single", 207, 300);
+    Bills.push_back(b1);
+    b1.printBill();
+    
+    // Create another Bill object and add it to the vector
+    Bill b2("Bob", "Double", 301 , 500);
+    Bills.push_back(b2);
+    b2.printBill();
+
+    return 0;
 }
